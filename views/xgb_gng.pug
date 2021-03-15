@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  each d in data
+    h3= `${d.name} ${d.symbol}`
+    ul
+        li= `流通市值: ${Number(d.non_restricted_capital/100000000).toFixed(1)}亿`
+        li= `总市值: ${Number(d.total_capital/100000000).toFixed(1)}亿`
+        li= `市盈率TTM: ${Number(d.per).toFixed(2)}`
+    p= d.desc

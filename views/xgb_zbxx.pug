@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  each d in data
+    //- 头条
+    h3= `${d.title} [${d.date}]`
+    p= d.summary
+    if d.bkj_info
+        p= `相关概念：${d.bkj_info}`
+    div(style="height: 1px; width: 100%; background-color: #ddd")
+
+    //- 公众号
+    //- b(style="font-size: 18px")= `${d.title} [${d.date}]\n`
+    //- p(style="font-size: 16px")= `${d.summary}\n`
+    //- div(style="height: 1px; width: 100%; background-color: #ddd")
